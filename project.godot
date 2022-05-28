@@ -1,0 +1,276 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "BrightTextureButton",
+"class": "BackButton",
+"language": "GDScript",
+"path": "res://scripts/ui/BackButton.gd"
+}, {
+"base": "LineEdit",
+"class": "BaseInput",
+"language": "GDScript",
+"path": "res://addons/GGS/src/base_classes/base_input.gd"
+}, {
+"base": "Line2D",
+"class": "BasicLightningLine2d",
+"language": "GDScript",
+"path": "res://addons/DrunkBull.SuperLightning/src/main/BasicLightningLine2d.gd"
+}, {
+"base": "Node2D",
+"class": "BasicScene2D",
+"language": "GDScript",
+"path": "res://scripts/Nodes/BasicScene2D.gd"
+}, {
+"base": "Control",
+"class": "BasicSceneMenu",
+"language": "GDScript",
+"path": "res://scripts/Nodes/BasicSceneMenu.gd"
+}, {
+"base": "TextureButton",
+"class": "BrightTextureButton",
+"language": "GDScript",
+"path": "res://scripts/ui/BrightTextureButton.gd"
+}, {
+"base": "ImageTexture",
+"class": "CustomGradientTexture",
+"language": "GDScript",
+"path": "res://assets/maujoe.custom_gradient_texture/custom_gradient_texture.gd"
+}, {
+"base": "Light2D",
+"class": "DanglingLight",
+"language": "GDScript",
+"path": "res://scripts/DanglingLight.gd"
+}, {
+"base": "Node",
+"class": "GGSUtils",
+"language": "GDScript",
+"path": "res://addons/GGS/src/utils.gd"
+}, {
+"base": "BasicScene2D",
+"class": "Game",
+"language": "GDScript",
+"path": "res://scripts/Game.gd"
+}, {
+"base": "Reference",
+"class": "JSONBeautifier",
+"language": "GDScript",
+"path": "res://addons/GGS/_depedencies/json_beautifier/json_beautifier.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationData.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationKeys",
+"language": "GDScript",
+"path": "res://localization/LocalizationKeys.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationPlaceholders",
+"language": "GDScript",
+"path": "res://localization/LocalizationPlaceholders.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationPlaceholdersData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationPlaceholdersData.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationSave",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationSave.gd"
+}, {
+"base": "BasicScene2D",
+"class": "Main",
+"language": "GDScript",
+"path": "res://scripts/Main.gd"
+}, {
+"base": "BrightTextureButton",
+"class": "MainMenuButton",
+"language": "GDScript",
+"path": "res://scripts/ui/MainMenuButton.gd"
+}, {
+"base": "Node",
+"class": "ModManager",
+"language": "GDScript",
+"path": "res://ModManager.gd"
+}, {
+"base": "BrightTextureButton",
+"class": "OptionsMenuButton",
+"language": "GDScript",
+"path": "res://scripts/ui/OptionsMenuButton.gd"
+}, {
+"base": "BrightTextureButton",
+"class": "PlayMenuButton",
+"language": "GDScript",
+"path": "res://scripts/ui/PlayMenuButton.gd"
+}, {
+"base": "Control",
+"class": "PopUpMenu",
+"language": "GDScript",
+"path": "res://scripts/ui/PopUpMenu.gd"
+}, {
+"base": "BrightTextureButton",
+"class": "QuitButton",
+"language": "GDScript",
+"path": "res://scripts/ui/QuitButton.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "SearchingLight",
+"language": "GDScript",
+"path": "res://scripts/SearchingLight.gd"
+}, {
+"base": "Control",
+"class": "SelectModFolderField",
+"language": "GDScript",
+"path": "res://scripts/ui/SelectModFolderField.gd"
+}, {
+"base": "Reference",
+"class": "SfxrGenerator",
+"language": "GDScript",
+"path": "res://addons/godot_sfxr/SfxrGenerator.gd"
+}, {
+"base": "Object",
+"class": "SfxrGlobals",
+"language": "GDScript",
+"path": "res://addons/godot_sfxr/SfxrGlobals.gd"
+}, {
+"base": "Object",
+"class": "SfxrStreamPlayerInterface",
+"language": "GDScript",
+"path": "res://addons/godot_sfxr/SfxrStreamPlayerInterface.gd"
+}, {
+"base": "Node2D",
+"class": "TurnAwareActor",
+"language": "GDScript",
+"path": "res://scripts/Nodes/TurnAwareActor.gd"
+}, {
+"base": "Resource",
+"class": "TurnManager",
+"language": "GDScript",
+"path": "res://scripts/TurnManager.gd"
+} ]
+_global_script_class_icons={
+"BackButton": "",
+"BaseInput": "",
+"BasicLightningLine2d": "",
+"BasicScene2D": "",
+"BasicSceneMenu": "",
+"BrightTextureButton": "",
+"CustomGradientTexture": "",
+"DanglingLight": "",
+"GGSUtils": "",
+"Game": "",
+"JSONBeautifier": "",
+"LocalizationData": "",
+"LocalizationKeys": "",
+"LocalizationPlaceholders": "",
+"LocalizationPlaceholdersData": "",
+"LocalizationSave": "",
+"Main": "",
+"MainMenuButton": "",
+"ModManager": "",
+"OptionsMenuButton": "",
+"PlayMenuButton": "",
+"PopUpMenu": "",
+"QuitButton": "",
+"SearchingLight": "",
+"SelectModFolderField": "",
+"SfxrGenerator": "",
+"SfxrGlobals": "",
+"SfxrStreamPlayerInterface": "",
+"TurnAwareActor": "",
+"TurnManager": ""
+}
+
+[application]
+
+config/name="Satchel Crawler"
+run/main_scene="res://Main.tscn"
+boot_splash/image="res://splash.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.0941176, 0.0901961, 0.145098, 1 )
+config/icon="res://icon.png"
+
+[autoload]
+
+ggsManager="*res://addons/GGS/src/ggs_manager.gd"
+LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
+Global="*res://Global.gd"
+BasicScene2d_singleton="*res://scripts/Nodes/BasicScene2D.gd"
+BasicSceneMenu_singleton="*res://scripts/Nodes/BasicSceneMenu.gd"
+SceneManager="*res://addons/scene_manager/scene_manager.tscn"
+Scenes="*res://addons/scene_manager/scenes.gd"
+
+[debug]
+
+settings/fps/force_fps=60
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/width=480
+window/size/height=270
+window/size/test_width=960
+window/size/test_height=540
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/GGS/plugin.cfg", "res://addons/fire/plugin.cfg", "res://addons/godot_sfxr/plugin.cfg", "res://addons/localization_editor/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/mixing-desk/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/scene_manager/plugin.cfg" )
+
+[global]
+
+fps=false
+return=false
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[locale]
+
+translations=PoolStringArray( "res://localization/localizations.fr_FR.translation" )
+
+[physics]
+
+2d/thread_model=2
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+2d/snapping/use_gpu_pixel_snap=true
+threads/thread_model=2
+environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

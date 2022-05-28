@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://images/1x/exitRight.brass.png" type="Texture" id=2]
+[ext_resource path="res://images/light.png" type="Texture" id=3]
+[ext_resource path="res://scripts/ui/QuitButton.gd" type="Script" id=4]
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( 23.716, 13.2497, 12.2699, 13.2497, 12.4186, 40.8245, 23.8647, 40.8988, 23.8647, 37.0339, 15.8376, 36.9595, 15.9862, 16.743, 23.8647, 16.743 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( 19.5538, 22.2431, 27.2094, 22.1688, 27.135, 16.1484, 32.5608, 16.2228, 42.7433, 26.331, 42.8177, 27.5202, 32.4865, 37.7028, 27.135, 37.6285, 26.9864, 31.6081, 19.2565, 31.7568 )
+
+[node name="QuitButton" type="TextureButton"]
+action_mode = 0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 4 )
+light_path = NodePath("Light2D")
+light_energy = 1.0
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 26, 25 )
+texture = ExtResource( 3 )
+texture_scale = 0.1
+energy = 0.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+show_behind_parent = true
+occluder = SubResource( 9 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+show_behind_parent = true
+occluder = SubResource( 10 )

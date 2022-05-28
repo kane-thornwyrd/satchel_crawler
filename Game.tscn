@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://utility_scenes/InGameMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://default_env.tres" type="Environment" id=2]
+[ext_resource path="res://utility_scenes/PaletteFilter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/Game.gd" type="Script" id=4]
+[ext_resource path="res://turn_manager.tres" type="Resource" id=5]
+[ext_resource path="res://scripts/Nodes/TurnAwareActor.gd" type="Script" id=6]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+turn_manager = ExtResource( 5 )
+change_turn_button_path = NodePath("Control/MarginContainer/CenterContainer/Button")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 480, 245 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 470.0
+margin_bottom = 235.0
+
+[node name="Button" type="Button" parent="Control/MarginContainer/CenterContainer"]
+margin_left = 185.0
+margin_top = 102.0
+margin_right = 275.0
+margin_bottom = 122.0
+text = "Change Turn"
+
+[node name="InGameMenu" parent="." instance=ExtResource( 1 )]
+rect_min_size = Vector2( 480, 270 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PaletteFilter" parent="." instance=ExtResource( 3 )]
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="Ambient" type="CanvasModulate" parent="."]
+color = Color( 0.717647, 0.717647, 0.717647, 1 )
+
+[node name="TurnAwareActor" type="Node2D" parent="." groups=["our_turn_end", "our_turn_start", "turn_aware"]]
+script = ExtResource( 6 )
+
+[node name="TurnAwareActor2" type="Node2D" parent="." groups=["our_turn_start", "turn_aware"]]
+script = ExtResource( 6 )
+
+[node name="TurnAwareActor3" type="Node2D" parent="." groups=["their_turn_end", "their_turn_start", "turn_aware"]]
+script = ExtResource( 6 )

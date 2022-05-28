@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://images/1x/import.brass.25x.png" type="Texture" id=1]
+[ext_resource path="res://scripts/ui/BrightTextureButton.gd" type="Script" id=2]
+[ext_resource path="res://images/light.png" type="Texture" id=3]
+[ext_resource path="res://theme.tres" type="Theme" id=4]
+[ext_resource path="res://scripts/ui/SelectModFolderField.gd" type="Script" id=5]
+[ext_resource path="res://addons/GGS/src/components/text_field/ggsTextField.tscn" type="PackedScene" id=7]
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 5, 14, 5, 21, 20, 21, 20, 14, 17, 14, 17, 17, 8, 17, 8, 14 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 11, 5, 11, 9, 9, 9, 9, 11, 12, 14, 13, 14, 16, 11, 16, 9, 14, 9, 14, 5 )
+
+[node name="SelectModFolderField" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+script = ExtResource( 5 )
+open_button_path = NodePath("HBoxContainer/BrightTextureButton")
+filedialog_path = NodePath("FileDialog")
+label_path = NodePath("HBoxContainer/mod_folder_path")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_right = 480.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 480, 270 )
+theme = ExtResource( 4 )
+popup_exclusive = true
+window_title = "Open a Directory"
+mode = 2
+access = 2
+show_hidden_files = true
+current_dir = "/home/kane-thornwyrd/old/kane-thornwyrd/Projets/godot_projects/Satchel Crawler"
+current_path = "/home/kane-thornwyrd/old/kane-thornwyrd/Projets/godot_projects/Satchel Crawler/"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_right = -397.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 413, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="BrightTextureButton" type="TextureButton" parent="HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+light_path = NodePath("Light2D")
+light_energy = 0.9
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="HBoxContainer/BrightTextureButton"]
+show_behind_parent = true
+occluder = SubResource( 2 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="HBoxContainer/BrightTextureButton"]
+show_behind_parent = true
+occluder = SubResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="HBoxContainer/BrightTextureButton"]
+position = Vector2( 12.5, 12.5 )
+texture = ExtResource( 3 )
+texture_scale = 0.06
+energy = 0.0
+
+[node name="mod_folder_path" parent="HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 25.0
+margin_right = 436.0
+margin_bottom = 25.0
+grow_horizontal = 2
+rect_min_size = Vector2( 411, 0 )
+size_flags_horizontal = 3
+max_length = 160
+editable = false
+expand_to_text_length = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+placeholder_text = "Select a folder containing mods"

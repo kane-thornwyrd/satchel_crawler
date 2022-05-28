@@ -1,0 +1,7 @@
+{
+  "editor.fontFamily": "'Victor Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "editor.insertSpaces": false,
+  "editor.wordWrap": "wordWrapColumn"
+}
